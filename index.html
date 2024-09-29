@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sticky Note Map</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="「Sticky Note Map」is Simple Post on WebMap!" />
+
+
+    <!-- MapLibre GL JS -->
+    <script src='https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@3.3.1/dist/maplibre-gl.css' rel='stylesheet' />
+
+    <!-- GeoCoder -->
+    <script src="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.css"  type="text/css" />
+
+    <!-- PMTiles -->
+    <script src="https://unpkg.com/pmtiles@2.10.0/dist/index.js"></script>
+
+    <!-- MyMaps -->
+    <script src="js/addSources_003.js"></script>
+    <script src="js/addLayers_003.js"></script>
+
+    <!-- スタイルシート -->
+    <link href="css/style_002.css" rel="stylesheet" />
+
+
+
+  </head>
+  <body>
+
+	<div id="map"></div>
+
+	<div id="info01">
+	  <center>
+	  <a href ="https://chosashi-data.org/amx/sticky_note_map/map/" target="_self"><b><big>Sticky Note Map</big></b></a><br>
+	  <small>【Ver0.03】&copy;AMX_Project 2024</small><br>
+	  <small><div  id="Count">　</div></small>
+	  <button id="myBtn"><b>What is this Map</b></button>
+	  </center>
+	</div>
+
+	<script src="js/main_003.js"></script>
+
+	<div id="info02">
+	<details id="newContents">
+	<summary><big>Latest Post (10)</big></summary>
+	<table id="infoTable" border="1.0" cellpadding="2">
+	<tr><th>Post List</th></tr>
+	</table>
+	</details>
+	</div>
+
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p><big><b>Sticky Note Map</b></big></p>
+			<p>
+				<span class="blue"><b>「Sticky Note Map」</b></span>is......<br>
+				<hr>
+				<span><b>........................................</b></span>
+				<br>
+				<span class="blue"><b>........................................</b></span><br>
+				<span class="red"><b>........................................</b></span><br>
+				<span><b>........................................</b></span>
+			</p>
+		</div>
+	</div>
+
+	<script src="./js/modal_003.js"></script>
+
+
+  </body>
+</html>

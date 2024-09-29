@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	color: navy;
+}
+
+a:visited{
+	color: navy;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+/*Class（指）*/
+.yubi {
+  cursor : pointer;
+}
+
+/*Class（いいね！）*/
+.nice {
+  cursor : pointer;
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+
+
+/*トップ（左上）*/
+#info01 {
+	padding: 6px 8px;
+	font: 10px/12px Arial, Helvetica, sans-serif;
+	color: navy;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	width: fit-content;
+	position: relative;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+}
+
+#info02 {
+	padding: 6px 8px;
+	font: 10px/12px Arial, Helvetica, sans-serif;
+	color: navy;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	width: fit-content;
+	max-width: 200px;
+	position: relative;
+	top: 20px;
+	left: 10px;
+	z-index: 30;
+}
+
+/*ボトム（左下）*/
+#info03 {
+	padding: 6px 8px;
+	font: 12px/14px Arial, Helvetica, sans-serif;
+	color: black;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+        width: fit-content;
+	position: absolute;
+	bottom: 0; 
+	z-index: 10;
+}
+
+
+
+.maplibregl-popup .maplibregl-popup-content{
+	padding: 8px 10px;
+	font: 12px/14px Arial, Helvetica, sans-serif;
+	color: black;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+	border-radius: 5px;
+	width: fit-content;
+}
+
+.maplibregl-ctrl-geocoder {
+	font-size: 12px;
+	line-height: 12px;
+	font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+	position: relative;
+	background-color: #fff;
+	width: 80%;
+	min-width: 100px;
+	z-index: 1;
+	border-radius: 5px;
+	transition: width 0.25s, min-width 0.25s;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.maplibregl-ctrl-geocoder .suggestions {
+    font-size: 10px;
+  }
+
+.select_box {
+  height         : 10px;
+  line-height    : 14px;
+  font-size      : 14px;
+}
+
+/*送信ボタン*/
+#share_info_Button {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 3px 3px;
+  font-size: 11px;
+  height:20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*送信URL*/
+#db_share_info_URL {
+  margin-top: 2px; /* 下方向に2px移動 */
+  width: 180px;
+  font-size: 10px;
+}
+
+
+/*削除ボタン*/
+#delete_share_info_Button {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 3px 3px;
+  font-size: 11px;
+  height:20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/*モーダルボタン*/
+#myBtn {
+  appearance: none;
+  border: 0;
+  border-radius: 6px;
+  background: navy;
+  color: #fff;
+  padding: 3px 3px;
+  font-size: 11px;
+  height:20px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 5; /*他の要素の上に表示 */
+}
+
+/*モーダル*/
+.modal {
+  display: none; /* 初期状態では非表示 */
+  position: fixed; /* 画面に固定 */
+  z-index: 50; /*他の要素の上に表示 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* スクロールバーを表示 */
+  background-color: rgba(0,0,0,0.4); /* 背景を半透明にする */
+}
+
+
+/*モーダルコンテンツ*/
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px; /* 最大幅を500pxに制限 */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
