@@ -58,13 +58,13 @@ function numberWithCommas(x) {
 }
 
 // アクセスカウンター（DB更新）
-response = fetch(updateAccessCount_URL)
+response = fetch(updateAccessCount_URL), {mode: 'no-cors'}
 
 
 // アクセスカウンター（表示）【関数】
 async function updateCount() {
 	try {
-		const response = await fetch(getAccessCount_URL);
+		const response = await fetch(getAccessCount_URL), {mode: 'no-cors'};
 		const count = await response.json(); // JSON形式でデータを取得
 		document.getElementById('Count').textContent = numberWithCommas(count[0].Count) + ' PV';
 	}
@@ -86,7 +86,7 @@ var Get_ID="";		// 取得したID
 
 async function Update_ShareInfo() {
   try {
-	await fetch(confirm_ID_URL)
+	await fetch(confirm_ID_URL), {mode: 'no-cors'}
 		.then(response => response.json())
 		.then(data => {
 			Get_ID = data[0].ID;
@@ -113,6 +113,7 @@ function delete_Share_Info(ID) {
 
 	if (confirm('本当に削除しますか？')) {
 		fetch(delete_share_info_URL, {
+			mode: 'no-cors'
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body: 'ID=' + ID
@@ -143,12 +144,12 @@ function getShareInfo() {
 	}
 
 	setTimeout(function(){
-		fetch(getData_URL)
+		fetch(getData_URL), {mode: 'no-cors'}
 			.then(response => response.json())
 			.then(data => {
 				disp_point_limit12(data);
 		}),
-		fetch(getList_URL)
+		fetch(getList_URL), {mode: 'no-cors'}
 			.then(response => response.json())
 			.then(data => {
 //				console.log(data);
@@ -416,7 +417,7 @@ const geocoderApi = {
             `https://nominatim.openstreetmap.org/search?q=${
                 config.query
             }&format=geojson&polygon_geojson=1&addressdetails=1`;
-                const response = await fetch(request);
+                const response = await fetch(request), {mode: 'no-cors'};
                 const geojson = await response.json();
                 for (const feature of geojson.features) {
                     const center = [
@@ -480,6 +481,7 @@ function update_PopupCount(e) {
 
 	// PopupCount追加
 	fetch(update_PopupCount_URL, {
+		mode: 'no-cors'
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		body: 'ID=' + ID
@@ -511,6 +513,7 @@ function update_NiceCount(ID) {
 
 	// PopupCount追加
 	fetch(update_NiceCount_URL, {
+		mode: 'no-cors'
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		body: 'ID=' + ID
@@ -708,6 +711,7 @@ function add_share_info(){
 
 		// DB登録
 		fetch(add_share_info_URL, {
+			mode: 'no-cors'
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body: 'db_user=' + db_user + '&db_share_info=' + db_share_info + '&db_share_info_URL=' + db_share_info_URL + '&db_Lng=' + db_Lng + '&db_Lat=' + db_Lat
