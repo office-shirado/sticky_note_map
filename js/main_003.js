@@ -58,13 +58,13 @@ function numberWithCommas(x) {
 }
 
 // アクセスカウンター（DB更新）
-response = fetch(updateAccessCount_URL), {mode: 'no-cors'}
+response = fetch(updateAccessCount_URL, {mode: 'no-cors'})
 
 
 // アクセスカウンター（表示）【関数】
 async function updateCount() {
 	try {
-		const response = await fetch(getAccessCount_URL), {mode: 'no-cors'};
+		const response = await fetch(getAccessCount_URL, {mode: 'no-cors'});
 		const count = await response.json(); // JSON形式でデータを取得
 		document.getElementById('Count').textContent = numberWithCommas(count[0].Count) + ' PV';
 	}
@@ -86,7 +86,7 @@ var Get_ID="";		// 取得したID
 
 async function Update_ShareInfo() {
   try {
-	await fetch(confirm_ID_URL), {mode: 'no-cors'}
+	await fetch(confirm_ID_URL, {mode: 'no-cors'})
 		.then(response => response.json())
 		.then(data => {
 			Get_ID = data[0].ID;
@@ -144,12 +144,12 @@ function getShareInfo() {
 	}
 
 	setTimeout(function(){
-		fetch(getData_URL), {mode: 'no-cors'}
+		fetch(getData_URL, {mode: 'no-cors'})
 			.then(response => response.json())
 			.then(data => {
 				disp_point_limit12(data);
 		}),
-		fetch(getList_URL), {mode: 'no-cors'}
+		fetch(getList_URL, {mode: 'no-cors'})
 			.then(response => response.json())
 			.then(data => {
 //				console.log(data);
@@ -417,7 +417,7 @@ const geocoderApi = {
             `https://nominatim.openstreetmap.org/search?q=${
                 config.query
             }&format=geojson&polygon_geojson=1&addressdetails=1`;
-                const response = await fetch(request), {mode: 'no-cors'};
+                const response = await fetch(request, {mode: 'no-cors'});
                 const geojson = await response.json();
                 for (const feature of geojson.features) {
                     const center = [
