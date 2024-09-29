@@ -113,7 +113,7 @@ function delete_Share_Info(ID) {
 
 	if (confirm('本当に削除しますか？')) {
 		fetch(delete_share_info_URL, {
-			mode: 'no-cors'
+			mode: 'no-cors',
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body: 'ID=' + ID
@@ -481,7 +481,7 @@ function update_PopupCount(e) {
 
 	// PopupCount追加
 	fetch(update_PopupCount_URL, {
-		mode: 'no-cors'
+		mode: 'no-cors',
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		body: 'ID=' + ID
@@ -513,7 +513,7 @@ function update_NiceCount(ID) {
 
 	// PopupCount追加
 	fetch(update_NiceCount_URL, {
-		mode: 'no-cors'
+		mode: 'no-cors',
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 		body: 'ID=' + ID
@@ -711,7 +711,7 @@ function add_share_info(){
 
 		// DB登録
 		fetch(add_share_info_URL, {
-			mode: 'no-cors'
+			mode: 'no-cors',
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body: 'db_user=' + db_user + '&db_share_info=' + db_share_info + '&db_share_info_URL=' + db_share_info_URL + '&db_Lng=' + db_Lng + '&db_Lat=' + db_Lat
