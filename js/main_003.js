@@ -66,7 +66,7 @@ async function updateCount() {
 	try {
 		const response = await fetch(getAccessCount_URL, {mode: 'no-cors'});
 //		const count = await response.json(); // JSON形式でデータを取得
-		const count = await {response[0]};
+		const count = await response;
 		console.log(count);
 		document.getElementById('Count').textContent = numberWithCommas(count[0].Count) + ' PV';
 	}
