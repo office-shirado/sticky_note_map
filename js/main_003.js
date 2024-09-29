@@ -1,14 +1,15 @@
 // ユーザー情報等
-const loginUrl = "./login.php";
-const updateAccessCount_URL = "./db/update_Access_Count.php";
-const getAccessCount_URL = "./db/get_Access_Count.php";
-const getData_URL = "./db/get_share_info.php";
-const getList_URL = "./db/get_List.php";
-const confirm_ID_URL = "./db/confirm_ID.php";
-const add_share_info_URL = "./db/add_share_info.php";
-const delete_share_info_URL = "./db/delete_share_info.php";
-const update_PopupCount_URL = "./db/update_PopupCount.php";
-const update_NiceCount_URL = "./db/update_NiceCount.php";
+const Base_URL = "https://chosashi-data.org/amx/sticky_note_map/db/"
+const loginUrl = Base_URL + "login.php";
+const updateAccessCount_URL = Base_URL + "update_Access_Count.php";
+const getAccessCount_URL = Base_URL + "get_Access_Count.php";
+const getData_URL = Base_URL + "get_share_info.php";
+const getList_URL = Base_URL + "get_List.php";
+const confirm_ID_URL = Base_URL + "confirm_ID.php";
+const add_share_info_URL = Base_URL + "add_share_info.php";
+const delete_share_info_URL = Base_URL + "delete_share_info.php";
+const update_PopupCount_URL = Base_URL + "update_PopupCount.php";
+const update_NiceCount_URL = Base_URL + "update_NiceCount.php";
 
 
 
