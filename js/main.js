@@ -58,7 +58,7 @@ var Get_ID=""
 async function Update_ShareInfo() {
   try {
 	await fetch(confirm_ID_URL, {
-			method: 'POST',
+			method: 'GET',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		})
 		.then(response => response.json())
