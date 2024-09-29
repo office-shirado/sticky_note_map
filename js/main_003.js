@@ -1,6 +1,5 @@
 // ユーザー情報等
 const Base_URL = "https://chosashi-data.org/amx/sticky_note_map/db/"
-const loginUrl = Base_URL + "login.php";
 const updateAccessCount_URL = Base_URL + "update_Access_Count.php";
 const getAccessCount_URL = Base_URL + "get_Access_Count.php";
 const getData_URL = Base_URL + "get_share_info.php";
