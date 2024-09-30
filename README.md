@@ -11,6 +11,11 @@ https://amx-project.github.io/note/
 ※どちらに投稿してもデータは反映されます。<br>
 ※リミット１２は別なデータになっています。<br>
 
+【API_URL】<br>
+https://chosashi-data.org/amx/sticky_note_map/api/
+※詳細は、js/main.jsを確認ください。
+※fetch(URL)とkey・IDを入力します。
+
 ---------------------------------------------------------
 日本版<br>
 【リミット１２】クチコミＷｅｂ地図<br>
