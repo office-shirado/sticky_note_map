@@ -7,7 +7,7 @@ const getData_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_sh
 const getList_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_List.php";
 //const confirm_ID_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/confirm_ID.php";
 const add_share_info_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/add_share_info.php";
-const delete_share_info_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/delete_share_info.php";
+//const delete_share_info_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/delete_share_info.php";
 //const update_PopupCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_PopupCount.php";
 //const update_NiceCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_NiceCount.php";
 
@@ -135,23 +135,31 @@ function getShareInfo() {
 			.then(data => {
 				disp_point_limit12(data);
 		}),
-		fetch(getList_URL)
-			.then(response => response.json())
-			.then(data => {
-//				console.log(data);
 
-				const tableBody = document.getElementById('infoTable').querySelector('tbody');
-				tableBody.innerHTML = ''; // 既存の行をクリア
+		fetch(API_URL, {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: 'key=' + encodeURIComponent('get_Sticky_Note_List')		// Sticky_Noteデータリスト取得
+		})
+		.then(response => response.text()) // JSON ではなくテキストとして取得
+		.then(text => {
+			// 先頭と末尾の空白文字を削除
+			var trimmedText = text.trim();
+			var data = JSON.parse(trimmedText);
+			console.log(data);
 
-				data.forEach(row => {
-					const newRow = document.createElement('tr');
-					const truncatedInfo = row.Info.length > 30 ? row.Info.substring(0, 30) + '...' : row.Info;
-					newRow.innerHTML = `
-						<td class="yubi" onclick="Flyto_Point('${row.Lng}', '${row.Lat}',17)">${truncatedInfo}<br><small>(ID:${row.ID}) ${row.PostDateTime}<small></td>
-					`;
-//				console.log(data);
-					tableBody.appendChild(newRow);
-				});
+			const tableBody = document.getElementById('infoTable').querySelector('tbody');
+			tableBody.innerHTML = ''; // 既存の行をクリア
+
+			data.forEach(row => {
+				const newRow = document.createElement('tr');
+				const truncatedInfo = row.Info.length > 30 ? row.Info.substring(0, 30) + '...' : row.Info;
+				newRow.innerHTML = `
+					<td class="yubi" onclick="Flyto_Point('${row.Lng}', '${row.Lat}',17)">${truncatedInfo}<br><small>(ID:${row.ID}) ${row.PostDateTime}<small></td>
+				`;
+//			console.log(data);
+				tableBody.appendChild(newRow);
+			});
 		})
 		console.log("【リミット１２】リスト表示完了");
 	},500);	// 500:0.5秒
