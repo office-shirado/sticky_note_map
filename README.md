@@ -13,8 +13,8 @@ https://amx-project.github.io/note/
 
 【API_URL】<br>
 https://chosashi-data.org/amx/sticky_note_map/api/
-※詳細は、js/main.jsを確認ください。
-※fetch(URL)とkey・IDを入力します。
+※詳細は、js/main.jsを確認ください。<br>
+※fetch(URL)とkey・IDを入力します。<br>
 
 ---------------------------------------------------------
 日本版<br>
