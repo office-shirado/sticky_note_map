@@ -40,8 +40,15 @@ function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-response = fetch(updateAccessCount_URL)
+// アクセスカウント追加
+var Update_Access_Count = fetch(API_URL, {
+	method: 'POST',
+	headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	body: 'key=' + encodeURIComponent('update_Access_Count')		// アクセスカウント追加
+	})
+console.log("アクセスカウントを追加しました。");
 
+// アクセスカウント更新
 async function updateCount() {
 	try {
 		const response = await fetch(API_URL, {
@@ -67,17 +74,22 @@ async function updateCount() {
 
 updateCount()
 
-var Latest_ID = ""
-var Get_ID=""
+var Latest_ID = 0;
+var Get_ID= 0;
 
 async function Update_ShareInfo() {
   try {
-	await fetch(confirm_ID_URL, {
-			method: 'GET',
-			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-		})
-		.then(response => response.json())
-		.then(data => {
+	await fetch(API_URL, {
+				method: 'POST',
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				body: 'key=' + encodeURIComponent('confirm_ID')		// 最終投稿ID確認
+			},
+		)
+		.then(response => response.text()) // JSON ではなくテキストとして取得
+		.then(text => {
+			// 先頭と末尾の空白文字を削除
+			var trimmedText = text.trim();
+			var data = JSON.parse(trimmedText);
 			Get_ID = data[0].ID;
 			if(Latest_ID != Get_ID){
 				getShareInfo();
@@ -87,7 +99,6 @@ async function Update_ShareInfo() {
 			console.log("投稿更新しない");
 			}
 		})
-
   } catch (error) {
 	console.error("サーバーエラー", error);
   }
