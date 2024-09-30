@@ -685,10 +685,10 @@ function add_share_info(){
 		}
 
 		// DB登録
-		fetch(add_share_info_URL, {
+		fetch(API_URL, {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-			body: 'db_user=' + db_user + '&db_share_info=' + db_share_info + '&db_share_info_URL=' + db_share_info_URL + '&db_Lng=' + db_Lng + '&db_Lat=' + db_Lat
+			body: 'key=' + encodeURIComponent('add_Sticky_Note') + '&db_user=' + db_user + '&db_share_info=' + db_share_info + '&db_share_info_URL=' + db_share_info_URL + '&db_Lng=' + db_Lng + '&db_Lat=' + db_Lat
 		})
 		.then(getShareInfo())
 
