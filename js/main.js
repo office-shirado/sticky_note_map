@@ -444,12 +444,11 @@ function update_PopupCount(e) {
 	var ID = e.features[0].properties['ID'];
 
 	// PopupCount追加
-	fetch(update_PopupCount_URL, {
+	fetch(API_URL, {
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-		body: 'ID=' + ID
+		body: 'key=' + encodeURIComponent('update_PopupCount')	+ '&ID=' + encodeURIComponent(ID)	// Popupカウント追加（ID）
 	})
-
 	console.log("ポップアップ（１２分追加）");
 
 	for (var i = 0; i < share_info_features.length; i++) {
@@ -474,11 +473,11 @@ function update_PopupCount(e) {
 
 function update_NiceCount(ID) {
 
-	// PopupCount追加
-	fetch(update_NiceCount_URL, {
+	// NiceCount追加
+	fetch(API_URL, {
 		method: 'POST',
 		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-		body: 'ID=' + ID
+		body: 'key=' + encodeURIComponent('update_NiceCount')	+ '&ID=' + encodeURIComponent(ID)	// いいね！カウント追加（ID）
 	})
 
 	const NiceCountElement = document.getElementById("NiceCount");
