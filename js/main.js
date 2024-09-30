@@ -154,7 +154,7 @@ function getShareInfo() {
 			// 先頭と末尾の空白文字を削除
 			var trimmedText = text.trim();
 			var data = JSON.parse(trimmedText);
-			console.log(data);
+//			console.log(data);
 
 			const tableBody = document.getElementById('infoTable').querySelector('tbody');
 			tableBody.innerHTML = ''; // 既存の行をクリア
