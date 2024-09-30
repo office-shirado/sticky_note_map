@@ -3,7 +3,7 @@ const API_URL = "https://chosashi-data.org/amx/sticky_note_map/api/";
 
 //const updateAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_Access_Count.php";
 //const getAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_Access_Count.php";
-const getData_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_share_info.php";
+//const getData_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_share_info.php";
 //const getList_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_List.php";
 //const confirm_ID_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/confirm_ID.php";
 const add_share_info_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/add_share_info.php";
@@ -130,10 +130,18 @@ function getShareInfo() {
 	}
 
 	setTimeout(function(){
-		fetch(getData_URL)
-			.then(response => response.json())
-			.then(data => {
-				disp_point_limit12(data);
+		fetch(API_URL, {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: 'key=' + encodeURIComponent('get_Sticky_Note')		// Sticky_Noteデータ取得
+		})
+		.then(response => response.text()) // JSON ではなくテキストとして取得
+		.then(text => {
+			// 先頭と末尾の空白文字を削除
+			var trimmedText = text.trim();
+			var data = JSON.parse(trimmedText);
+//			console.log(data);
+			disp_point_limit12(data);
 		}),
 
 		fetch(API_URL, {
