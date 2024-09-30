@@ -50,8 +50,15 @@ async function updateCount() {
 			body: 'key=' + encodeURIComponent('get_Access_Count')		// アクセスカウント取得
 			}
 		)
-		const count = await response.json();
-		document.getElementById('Count').textContent = numberWithCommas(count[0].Count) + ' PV';
+		.then(response => response.text()) // JSON ではなくテキストとして取得
+		.then(text => {
+			var trimmedText = text.trim();		// 先頭と末尾の空白文字を削除
+			var data = JSON.parse(trimmedText);
+			var count = data[0].Count;
+			document.getElementById('Count').textContent = numberWithCommas(count) + ' PV';
+			console.log("アクセスカウントを取得しました。：" + count);
+		})
+		
 	}
 	catch (error) {
 		console.error('Error fetching data:', error);
