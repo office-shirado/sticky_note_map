@@ -1,15 +1,15 @@
 var ID = 0;
 const API_URL = "https://chosashi-data.org/amx/sticky_note_map/api/";
 
-const updateAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_Access_Count.php";
-const getAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_Access_Count.php";
+//const updateAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_Access_Count.php";
+//const getAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_Access_Count.php";
 const getData_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_share_info.php";
 const getList_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_List.php";
-const confirm_ID_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/confirm_ID.php";
+//const confirm_ID_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/confirm_ID.php";
 const add_share_info_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/add_share_info.php";
 const delete_share_info_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/delete_share_info.php";
-const update_PopupCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_PopupCount.php";
-const update_NiceCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_NiceCount.php";
+//const update_PopupCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_PopupCount.php";
+//const update_NiceCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_NiceCount.php";
 
 var data_Lng = "";
 var data_Lat = "";
@@ -106,10 +106,10 @@ async function Update_ShareInfo() {
 
 function delete_Share_Info(ID) {
 	if (confirm('本当に削除しますか？')) {
-		fetch(delete_share_info_URL, {
+		fetch(API_URL, {
 			method: 'POST',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-			body: 'ID=' + ID
+			body: 'key=' + encodeURIComponent('delete_Sticky_Note')	+ '&ID=' + encodeURIComponent(ID)	// Sticky_Noteデータ削除（ID）
 		})
 		console.log("投稿を削除しました。ID:"+ ID);
 		Limit21_PopUp01.remove();
