@@ -1,3 +1,6 @@
+var ID = 0;
+const API_URL = "https://chosashi-data.org/amx/sticky_note_map/api/";
+
 const updateAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/update_Access_Count.php";
 const getAccessCount_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_Access_Count.php";
 const getData_URL = "https://chosashi-data.org/amx/sticky_note_map/map/db/get_share_info.php";
@@ -41,7 +44,12 @@ response = fetch(updateAccessCount_URL)
 
 async function updateCount() {
 	try {
-		const response = await fetch(getAccessCount_URL);
+		const response = await fetch(API_URL, {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: 'key=' + encodeURIComponent('get_Access_Count')		// アクセスカウント取得
+			}
+		)
 		const count = await response.json();
 		document.getElementById('Count').textContent = numberWithCommas(count[0].Count) + ' PV';
 	}
