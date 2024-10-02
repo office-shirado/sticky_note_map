@@ -540,7 +540,7 @@ function Popup_Limit12(e) {
 
 
 	let infoContent = Popup_Limit12_Info;
-	if ( Popup_Limit12_URL !==" " ) {
+	if ( Popup_Limit12_URL !=="" ) {
 		infoContent = `<a href="${Popup_Limit12_URL}" target="_blank">${Popup_Limit12_Info}</a>`;
 	}else{
 		if (Popup_Limit12_Info.startsWith("https://")) {
