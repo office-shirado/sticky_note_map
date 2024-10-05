@@ -15,8 +15,6 @@ https://amx-project.github.io/note/<br>
 最新<br>
 ```
 <script src="https://office-shirado.github.io/sticky_note_map/src/dist/Sticky_Note_Map.js"></script>
-```
-```
 <link rel="stylesheet" href="https://office-shirado.github.io/sticky_note_map/src/dist/Sticky_Note_Map.css"  type="text/css" />
 ```
 <br>
