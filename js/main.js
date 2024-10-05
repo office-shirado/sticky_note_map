@@ -20,9 +20,6 @@ var map = new maplibregl.Map({
 
 
 map.on('load', function () {
-
-
-
 	// ソース追加
 	addSources();
 
@@ -40,6 +37,9 @@ map.on('load', function () {
 
 	// Sticky Note Map追加
 	add_Sticky_Note_Map();
+
+	// 1分ごとの更新
+	setInterval(Confirm_Latest_Sticky_Note_Map, 1000 * 60);
 	//################# Sticky Note Map #################
 
 
@@ -56,6 +56,7 @@ map.on('load', function () {
 	}
 
 });
+
 
 //################# マップコントロール（画面制御） #################
 map.doubleClickZoom.disable();
