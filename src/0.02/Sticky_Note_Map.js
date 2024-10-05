@@ -593,7 +593,7 @@ function Popup_Post_Menu(e){
 				'<input type="hidden" name="db_Lng" value="' + db_Lng + '">' +
 				'<input type="hidden" name="db_Lat" value="' + db_Lat + '">' +
 				'<input  type="text"class="share_info" id="db_Sticky_Note" name="db_Sticky_Note" placeholder="' + Popup_Text_Placeholder + '"  maxlength="100">　' + ' ' +
-				'<button id="share_info_Button" class="sendButton" onclick="add_Sticky_Note()"><b>' + Popup_Text_Post_Button + '</b></button><br>' + 
+				'<button id="post_Sticky_Note_Button" class="sendButton" onclick="add_Sticky_Note()"><b>' + Popup_Text_Post_Button + '</b></button><br>' + 
 				'<small>' + Popup_Text_Link + ' </small><input  type="text"class="share_info" id="db_Sticky_Note_URL" name="db_Sticky_Note_URL" placeholder="https://...."  maxlength="100">　' + '<br>' +
 				'<hr>' + 
 				'<center>' + 
