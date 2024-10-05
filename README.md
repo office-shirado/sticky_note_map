@@ -12,19 +12,23 @@ https://amx-project.github.io/note/<br>
 ※リミット１２は別なデータになっています。<br>
 
 【プラグイン】
-最新
+最新<br>
+```
 <script src="https://office-shirado.github.io/sticky_note_map/src/dist/Sticky_Note_Map.js"></script>
+```
+```
 <link rel="stylesheet" href="https://office-shirado.github.io/sticky_note_map/src/dist/Sticky_Note_Map.css"  type="text/css" />
-
-0.02
+```
+<br>
+0.02<br>
 <script src="https://office-shirado.github.io/sticky_note_map/src/0.02/Sticky_Note_Map.js"></script>
 <link rel="stylesheet" href="https://office-shirado.github.io/sticky_note_map/src/0.02/Sticky_Note_Map.css"  type="text/css" />
 
-【サンプル】
-Most Simple
+【サンプル】<br>
+Most Simple<br>
 https://office-shirado.github.io/sticky_note_map/sample/most_simple/<br>
-
-Basic
+<br>
+Basic<br>
 https://office-shirado.github.io/sticky_note_map/sample/basic/<br>
 
 
