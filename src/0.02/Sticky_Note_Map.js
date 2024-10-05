@@ -456,7 +456,7 @@ function Popup_Sticky_Note_Map(e) {
 		infoContent = `<a href="${Sticky_Note_URL}" target="_blank">${Sticky_Note_Sticky_Note}</a>`;
 	}else{
 		if (Sticky_Note_Sticky_Note.startsWith("https://")) {
-			infoContent = `<a href="${Sticky_Note}" target="_blank">${Sticky_Note}</a>`;
+			infoContent = `<a href="${Sticky_Note_URL }" target="_blank">${Sticky_Note_URL }</a>`;
 		}
 	}
 
