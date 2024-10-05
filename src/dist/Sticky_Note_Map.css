@@ -23,27 +23,10 @@
 	width: fit-content;
 }
 
-.maplibregl-ctrl-geocoder {
-	font-size: 12px;
-	line-height: 12px;
-	font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
-	position: relative;
-	background-color: #fff;
-	width: 80%;
-	min-width: 100px;
-	z-index: 1;
-	border-radius: 5px;
-	transition: width 0.25s, min-width 0.25s;
-	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.maplibregl-ctrl-geocoder .suggestions {
-    font-size: 10px;
-  }
 
 
 /*送信ボタン*/
-#share_info_Button {
+#Sticky_Note_Button {
   appearance: none;
   border: 0;
   border-radius: 4px;
@@ -57,7 +40,7 @@
 }
 
 /*送信URL*/
-#db_share_info_URL {
+#db_Sticky_Note_URL {
   margin-top: 2px; /* 下方向に2px移動 */
   width: 180px;
   font-size: 10px;
@@ -65,7 +48,7 @@
 
 
 /*削除ボタン*/
-#delete_share_info_Button {
+#delete_Sticky_Note_Button {
   appearance: none;
   border: 0;
   border-radius: 4px;
