@@ -126,17 +126,19 @@ function get_Sticky_Note_Map_List() {
 		var trimmedText = text.trim();
 		var data = JSON.parse(trimmedText);
 
-		const tableBody = document.getElementById('infoTable').querySelector('tbody');
-		tableBody.innerHTML = ''; // 既存の行をクリア
+		if(Sticky_Note_Map_List_Target_ID !==""){
+			const tableBody = document.getElementById('infoTable').querySelector('tbody');
+			tableBody.innerHTML = ''; // 既存の行をクリア
 
-		data.forEach(row => {
-			const newRow = document.createElement('tr');
-			const truncated_Sticky_Note = row.StickyNote.length > 30 ? row.StickyNote.substring(0, 30) + '...' : row.StickyNote;
-			newRow.innerHTML = `
-				<td class="yubi" onclick="Flyto_Point('${row.Lng}', '${row.Lat}',17)">${truncated_Sticky_Note}<br><small>(ID:${row.ID}) ${row.PostDateTime}<small></td>
-			`;
-			tableBody.appendChild(newRow);
-		});
+			data.forEach(row => {
+				const newRow = document.createElement('tr');
+				const truncated_Sticky_Note = row.StickyNote.length > 30 ? row.StickyNote.substring(0, 30) + '...' : row.StickyNote;
+				newRow.innerHTML = `
+					<td class="yubi" onclick="Flyto_Point('${row.Lng}', '${row.Lat}',17)">${truncated_Sticky_Note}<br><small>(ID:${row.ID}) ${row.PostDateTime}<small></td>
+				`;
+				tableBody.appendChild(newRow);
+			});
+		}
 	})
 }
 //################# Sticky_Note_Mapリスト（10）取得 #################
