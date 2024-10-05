@@ -29,8 +29,19 @@ map.on('load', function () {
 	// レイヤ追加
 	addLayers();
 
+	//################# Sticky Note Map #################
+	// Sticky Note Mapオプション
+	Sticky_Note_Map_User = "Guest";			// ユーザー指定
+	Sticky_Note_Map_Font = "Noto Sans CJK JP Bold";	// フォント指定
+	Sticky_Note_Map_Language = "jp";		// 言語指定（デフォルト:英語、jp：日本語）
+	Sticky_Note_Map_PV_Target_ID = "PV_Count";	// PV数を表示するターゲット（ID）
+	Sticky_Note_Map_List_Target_ID = "newContents";	// リスト（10）を表示するターゲット（ID）
+
+
 	// Sticky Note Map追加
 	add_Sticky_Note_Map();
+	//################# Sticky Note Map #################
+
 
 	// 現在地取得
 	ZoomLv = map.getZoom();
@@ -39,32 +50,21 @@ map.on('load', function () {
 		// 1.0秒遅延してジャンプ
 		setTimeout(
 			function(){
-				navigator.geolocation.getCurrentPosition(getLocation);
+				navigator.geolocation.getCurrentPosition(Sticky_Note_Map_Flyto_Location);	// Sticky_Note_Map関数
 			},1000
 		);
 	}
 
-
-	// 最新投稿のイベントリスナー追加
-	const detailsElement = document.getElementById('newContents');
-
-	detailsElement.addEventListener('toggle', () => {
-		if (detailsElement.open) {
-			// 最新投稿の更新
-			Update_ShareInfo();
-		}
-	});
-
 });
 
-//#################マップコントロール（画面制御）#################
+//################# マップコントロール（画面制御） #################
 map.doubleClickZoom.disable();
 map.dragRotate.disable();
 map.touchZoomRotate.disableRotation();
-//#################マップコントロール（画面制御）#################
+//################# マップコントロール（画面制御） #################
 
 
-//#################マップコントロール（ツール）#################
+//################# マップコントロール（ツール） #################
 //ジオコーダー
 const geocoderApi = {
         forwardGeocode: async (config) => {
@@ -123,7 +123,7 @@ map.addControl(new maplibregl.GeolocateControl({
     	'top-right'
 );
 
-//#################マップコントロール（ツール）#################
+//################# マップコントロール（ツール） #################
 
 
 
