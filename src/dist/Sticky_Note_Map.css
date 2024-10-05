@@ -26,14 +26,14 @@
 
 
 /*ëóêMÉ{É^Éì*/
-#Sticky_Note_Button {
+#post_Sticky_Note_Button {
   appearance: none;
   border: 0;
   border-radius: 4px;
   background: #4676D7;
   color: #fff;
   padding: 3px 3px;
-  font-size: 11px;
+  font-size: 12px;
   height:20px;
   text-align: center;
   cursor: pointer;
@@ -55,7 +55,7 @@
   background: #4676D7;
   color: #fff;
   padding: 3px 3px;
-  font-size: 11px;
+  font-size: 12px;
   height:20px;
   text-align: center;
   cursor: pointer;

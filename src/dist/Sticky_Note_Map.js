@@ -26,7 +26,7 @@ var Popup_Text_Post_Button = "POST";
 var Popup_Text_Placeholder = "Comment or URL";
 var Popup_Text_Link = "URL";
 var Alert_Text_Delete = "Are you sure you want to delete this?";
-
+var Alert_Text_Post01 = "Please enter a comment.";
 
 
 //################# 桁表示（1000→1,000） #################
@@ -126,17 +126,19 @@ function get_Sticky_Note_Map_List() {
 		var trimmedText = text.trim();
 		var data = JSON.parse(trimmedText);
 
-		const tableBody = document.getElementById('infoTable').querySelector('tbody');
-		tableBody.innerHTML = ''; // 既存の行をクリア
+		if(Sticky_Note_Map_List_Target_ID !==""){
+			const tableBody = document.getElementById('infoTable').querySelector('tbody');
+			tableBody.innerHTML = ''; // 既存の行をクリア
 
-		data.forEach(row => {
-			const newRow = document.createElement('tr');
-			const truncated_Sticky_Note = row.StickyNote.length > 30 ? row.StickyNote.substring(0, 30) + '...' : row.StickyNote;
-			newRow.innerHTML = `
-				<td class="yubi" onclick="Flyto_Point('${row.Lng}', '${row.Lat}',17)">${truncated_Sticky_Note}<br><small>(ID:${row.ID}) ${row.PostDateTime}<small></td>
-			`;
-			tableBody.appendChild(newRow);
-		});
+			data.forEach(row => {
+				const newRow = document.createElement('tr');
+				const truncated_Sticky_Note = row.StickyNote.length > 30 ? row.StickyNote.substring(0, 30) + '...' : row.StickyNote;
+				newRow.innerHTML = `
+					<td class="yubi" onclick="Flyto_Point('${row.Lng}', '${row.Lat}',17)">${truncated_Sticky_Note}<br><small>(ID:${row.ID}) ${row.PostDateTime}<small></td>
+				`;
+				tableBody.appendChild(newRow);
+			});
+		}
 	})
 }
 //################# Sticky_Note_Mapリスト（10）取得 #################
@@ -454,7 +456,7 @@ function Popup_Sticky_Note_Map(e) {
 		infoContent = `<a href="${Sticky_Note_URL}" target="_blank">${Sticky_Note_Sticky_Note}</a>`;
 	}else{
 		if (Sticky_Note_Sticky_Note.startsWith("https://")) {
-			infoContent = `<a href="${Sticky_Note}" target="_blank">${Sticky_Note}</a>`;
+			infoContent = `<a href="${Sticky_Note_Sticky_Note}" target="_blank">${Sticky_Note_Sticky_Note}</a>`;
 		}
 	}
 
@@ -567,7 +569,7 @@ async function add_Sticky_Note(){
 			console.error('データベースへの登録に失敗しました');
 		}
 	}else{
-		alert("コメントが入力されていません。");
+		alert(Alert_Text_Post01);
 	}
 
 }
@@ -591,7 +593,7 @@ function Popup_Post_Menu(e){
 				'<input type="hidden" name="db_Lng" value="' + db_Lng + '">' +
 				'<input type="hidden" name="db_Lat" value="' + db_Lat + '">' +
 				'<input  type="text"class="share_info" id="db_Sticky_Note" name="db_Sticky_Note" placeholder="' + Popup_Text_Placeholder + '"  maxlength="100">　' + ' ' +
-				'<button id="share_info_Button" class="sendButton" onclick="add_Sticky_Note()"><b>' + Popup_Text_Post_Button + '</b></button><br>' + 
+				'<button id="post_Sticky_Note_Button" class="sendButton" onclick="add_Sticky_Note()"><b>' + Popup_Text_Post_Button + '</b></button><br>' + 
 				'<small>' + Popup_Text_Link + ' </small><input  type="text"class="share_info" id="db_Sticky_Note_URL" name="db_Sticky_Note_URL" placeholder="https://...."  maxlength="100">　' + '<br>' +
 				'<hr>' + 
 				'<center>' + 
@@ -612,7 +614,7 @@ function set_Language() {
 	if( Sticky_Note_Map_Language =="jp"){
 		Popup_Text_User ="投稿者";
 		Popup_Text_PostDateTime ="投稿日時";
-		Popup_Text_Post_Button = "ＰＯＳＴ";
+		Popup_Text_Post_Button = "POST";
 		Popup_Text_Delete_Button = "削　除";
 		Popup_Text_Nice ="いいね！";
 		Popup_Text_GoogleMaps = "Google Maps";
@@ -621,6 +623,7 @@ function set_Language() {
 		Popup_Text_Placeholder = "コメント又はＵＲＬ";
 		Popup_Text_Link = "リンク";
 		Alert_Text_Delete = "本当に削除しますか？";
+		Alert_Text_Post01 = "コメントが入力されていません。";
 	}
 }
 
