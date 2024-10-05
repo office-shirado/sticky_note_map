@@ -11,10 +11,22 @@ https://amx-project.github.io/note/<br>
 ※どちらに投稿してもデータは反映されます。<br>
 ※リミット１２は別なデータになっています。<br>
 
-【API_URL】<br>
-https://chosashi-data.org/amx/sticky_note_map/api/<br>
-※詳細は、js/main.jsを確認ください。<br>
-※fetch(URL)とkey・IDを入力します。<br>
+【プラグイン】
+最新
+<script src="https://office-shirado.github.io/sticky_note_map/src/dist/Sticky_Note_Map.js"></script>
+<link rel="stylesheet" href="https://office-shirado.github.io/sticky_note_map/src/dist/Sticky_Note_Map.css"  type="text/css" />
+
+0.02
+<script src="https://office-shirado.github.io/sticky_note_map/src/0.02/Sticky_Note_Map.js"></script>
+<link rel="stylesheet" href="https://office-shirado.github.io/sticky_note_map/src/0.02/Sticky_Note_Map.css"  type="text/css" />
+
+【サンプル】
+Most Simple
+https://office-shirado.github.io/sticky_note_map/sample/most_simple/<br>
+
+Basic
+https://office-shirado.github.io/sticky_note_map/sample/basic/<br>
+
 
 ---------------------------------------------------------
 日本版<br>
