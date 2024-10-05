@@ -26,7 +26,7 @@ var Popup_Text_Post_Button = "POST";
 var Popup_Text_Placeholder = "Comment or URL";
 var Popup_Text_Link = "URL";
 var Alert_Text_Delete = "Are you sure you want to delete this?";
-
+var Alert_Text_Post01 = "Please enter a comment.";
 
 
 //################# 桁表示（1000→1,000） #################
@@ -569,7 +569,7 @@ async function add_Sticky_Note(){
 			console.error('データベースへの登録に失敗しました');
 		}
 	}else{
-		alert("コメントが入力されていません。");
+		alert(Alert_Text_Post01);
 	}
 
 }
@@ -614,7 +614,7 @@ function set_Language() {
 	if( Sticky_Note_Map_Language =="jp"){
 		Popup_Text_User ="投稿者";
 		Popup_Text_PostDateTime ="投稿日時";
-		Popup_Text_Post_Button = "ＰＯＳＴ";
+		Popup_Text_Post_Button = "POST";
 		Popup_Text_Delete_Button = "削　除";
 		Popup_Text_Nice ="いいね！";
 		Popup_Text_GoogleMaps = "Google Maps";
@@ -623,6 +623,7 @@ function set_Language() {
 		Popup_Text_Placeholder = "コメント又はＵＲＬ";
 		Popup_Text_Link = "リンク";
 		Alert_Text_Delete = "本当に削除しますか？";
+		Alert_Text_Post01 = "コメントが入力されていません。";
 	}
 }
 
