@@ -281,7 +281,7 @@ function set_Sticky_Note_Map_Source_Layer() {
 		},
 		paint: {
 			"fill-color": "#00ff00",
-			"fill-opacity": 0.2	// 透明（見えない）
+			"fill-opacity": 0.0	// 透明（見えない）
 		},
 		'minzoom': 0,
 		'maxzoom': 24,
@@ -633,7 +633,6 @@ function Popup_Post_Menu(e){
 
 
 function set_Language() {
-console.log(Sticky_Note_Map_Language);
 	if( Sticky_Note_Map_Language =="en"){
 		Popup_Text_User ="from";
 		Popup_Text_PostDateTime ="at";
@@ -732,7 +731,6 @@ function add_Sticky_Note_Map() {
 			Sticky_Note_Map_Language = "en";
 		}
 		set_Language();
-		console.log(Sticky_Note_Map_Language);
 	});
 
 	// クリック属性表示（Sticky_Note_Map）【Point】
