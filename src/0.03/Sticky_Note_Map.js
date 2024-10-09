@@ -633,6 +633,7 @@ function Popup_Post_Menu(e){
 
 
 function set_Language() {
+console.log(Sticky_Note_Map_Language);
 	if( Sticky_Note_Map_Language =="jp"){
 		Popup_Text_User ="投稿者";
 		Popup_Text_PostDateTime ="投稿日時";
@@ -717,6 +718,7 @@ function add_Sticky_Note_Map() {
 			Sticky_Note_Map_Language = "en";
 		}
 		set_Language();
+		colsole.log(Sticky_Note_Map_Language);
 	});
 
 	// クリック属性表示（Sticky_Note_Map）【Point】
