@@ -275,7 +275,7 @@ function set_Sticky_Note_Map_Source_Layer() {
 
 	map.addLayer({
 		'id': 'Language_Area',
-		'type': 'polygon',
+		'type': 'fill',
 		'source': 'Language_Area',
 		'layout': {
 		},
