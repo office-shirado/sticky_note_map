@@ -1,0 +1,64 @@
+/*Class（いいね！）*/
+.nice {
+  cursor : pointer;
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+
+.maplibregl-popup .maplibregl-popup-content{
+	padding: 8px 10px;
+	font: 12px/14px Arial, Helvetica, sans-serif;
+	color: black;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+	border-radius: 5px;
+	width: fit-content;
+}
+
+
+
+/*送信ボタン*/
+#post_Sticky_Note_Button {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 3px 3px;
+  font-size: 12px;
+  height:20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*送信URL*/
+#db_Sticky_Note_URL {
+  margin-top: 2px; /* 下方向に2px移動 */
+  width: 180px;
+  font-size: 10px;
+}
+
+
+/*削除ボタン*/
+#delete_Sticky_Note_Button {
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: #4676D7;
+  color: #fff;
+  padding: 3px 3px;
+  font-size: 12px;
+  height:20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
