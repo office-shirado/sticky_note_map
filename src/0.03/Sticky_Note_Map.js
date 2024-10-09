@@ -716,8 +716,7 @@ function add_Sticky_Note_Map() {
 		}else{
 			Sticky_Note_Map_Language = "en";
 		}
-
-	console.log(Sticky_Note_Map_Language);
+		set_Language();
 	});
 
 	// クリック属性表示（Sticky_Note_Map）【Point】
