@@ -634,6 +634,20 @@ function Popup_Post_Menu(e){
 
 function set_Language() {
 console.log(Sticky_Note_Map_Language);
+	if( Sticky_Note_Map_Language =="en"){
+		Popup_Text_User ="from";
+		Popup_Text_PostDateTime ="at";
+		Popup_Text_Post_Button = "POST";
+		Popup_Text_Delete_Button = "Delete";
+		Popup_Text_Nice ="Like";
+		Popup_Text_GoogleMaps = "Google Maps";
+		Popup_Text_StreetView = "Google Street View";
+		Popup_Text_Description = "Post (within 100 characters)";
+		Popup_Text_Placeholder = "Comment or URL";
+		Popup_Text_Link = "URL";
+		Alert_Text_Delete = "Are you sure you want to delete this?";
+		Alert_Text_Post01 = "Please enter a comment.";
+	}
 	if( Sticky_Note_Map_Language =="jp"){
 		Popup_Text_User ="投稿者";
 		Popup_Text_PostDateTime ="投稿日時";
