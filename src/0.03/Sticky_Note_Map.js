@@ -270,7 +270,7 @@ function set_Sticky_Note_Map_Source_Layer() {
 	// Language_Area
 	map.addSource("Language_Area", {
 		"type": "geojson",
-		"data": "./data/Language_Area.geojson",
+		"data": "https://chosashi-data.org/amx/sticky_note_map/data/Language_Area.geojson",
 	});
 
 	map.addLayer({
