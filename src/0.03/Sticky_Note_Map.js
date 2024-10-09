@@ -713,7 +713,10 @@ function add_Sticky_Note_Map() {
 		const features = map.queryRenderedFeatures(bbox, { layers: ['Language_Area']});
 		if ( features.length > 0 ){
 			Sticky_Note_Map_Language = features[0].properties.Language_Area;
+		}else{
+			Sticky_Note_Map_Language = "en";
 		}
+
 	console.log(Sticky_Note_Map_Language);
 	});
 
