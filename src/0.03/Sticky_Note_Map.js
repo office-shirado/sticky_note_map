@@ -701,6 +701,22 @@ function add_Sticky_Note_Map() {
 	map.on('drag', function () { map.getCanvas().style.cursor = 'grabbing'; });	//マウスイベント【ドラッグ】
 	map.on('moveend', function () {	map.getCanvas().style.cursor = ''; });		//マウスイベント【ムーブエンド】
 
+	// 言語切替
+	map.on('moveend', function () {
+		const center = map.getCenter();
+		const point = map.project(center); //取得した座標値をピクセル座標値に変換
+	        //変換した座標値から一定範囲内をbbox指定（中央アイコンの大きさ等に応じて幅は調整）
+	        const bbox = [
+	            [point.x - 1, point.y - 1],
+	            [point.x + 1, point.y + 1]
+		];
+		const features = map.queryRenderedFeatures(bbox, { layers: ['Language_Area']});
+		if ( features.length > 0 ){
+			Sticky_Note_Map_Language = features[0].properties.Language_Area;
+		}
+	console.log(Sticky_Note_Map_Language);
+	});
+
 	// クリック属性表示（Sticky_Note_Map）【Point】
 	map.on('click', 'Sticky_Note_Map', (e) => { if( e.features[0].properties['ID'] !== undefined ){ Popup_Sticky_Note_Map(e); } });
 
