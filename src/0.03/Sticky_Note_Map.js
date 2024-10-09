@@ -267,16 +267,10 @@ async function Confirm_Latest_Sticky_Note_Map() {
 
 //################# ソース・レイヤ初期設定 #################
 function set_Sticky_Note_Map_Source_Layer() {
-	Sticky_Note_Map_features = [];
-	var geojson = {
-		type: "FeatureCollection",
-		features: Sticky_Note_Map_features
-	};
-
 	// Language_Area
 	map.addSource("Language_Area", {
 		"type": "geojson",
-		"data": ./data/Language_Area.geojson,
+		"data": "./data/Language_Area.geojson",
 	});
 
 	map.addLayer({
@@ -293,6 +287,12 @@ function set_Sticky_Note_Map_Source_Layer() {
 		'maxzoom': 24,
 	});
 
+
+	Sticky_Note_Map_features = [];
+	var geojson = {
+		type: "FeatureCollection",
+		features: Sticky_Note_Map_features
+	};
 
 	// Sticky_Note_Map
 	map.addSource("Sticky_Note_Map", {
